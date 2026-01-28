@@ -1,0 +1,51 @@
+{
+  "name": "eixointelectual",
+  "private": true,
+  "version": "0.0.0",
+  "type": "module",
+  "scripts": {
+    "dev": "next dev",
+    "build": "next build",
+    "start": "next start",
+    "lint": "next lint"
+  },
+  "dependencies": {
+    "@gsap/react": "^2.1.2",
+    "@react-three/drei": "^10.7.7",
+    "@react-three/fiber": "^9.5.0",
+    "@types/three": "^0.182.0",
+    "clsx": "^2.1.1",
+    "date-fns": "^4.1.0",
+    "eslint-config-next": "^16.1.4",
+    "framer-motion": "^12.23.25",
+    "gray-matter": "^4.0.3",
+    "gsap": "^3.14.2",
+    "lucide-react": "^0.511.0",
+    "next": "^16.1.4",
+    "react": "^19.2.3",
+    "react-dom": "^19.2.3",
+    "react-intersection-observer": "^10.0.0",
+    "remark": "^15.0.1",
+    "remark-html": "^16.0.1",
+    "tailwind-merge": "^3.0.2",
+    "three": "^0.182.0",
+    "zustand": "^5.0.3"
+  },
+  "devDependencies": {
+    "@eslint/js": "^9.25.0",
+    "@tailwindcss/typography": "^0.5.19",
+    "@types/node": "^22.15.30",
+    "@types/react": "^18.3.12",
+    "@types/react-dom": "^18.3.1",
+    "autoprefixer": "^10.4.21",
+    "babel-plugin-react-dev-locator": "^1.0.0",
+    "eslint": "^9.25.0",
+    "eslint-plugin-react-hooks": "^5.2.0",
+    "eslint-plugin-react-refresh": "^0.4.19",
+    "globals": "^16.0.0",
+    "postcss": "^8.5.3",
+    "tailwindcss": "^3.4.17",
+    "typescript": "~5.8.3",
+    "typescript-eslint": "^8.30.1"
+  }
+}
