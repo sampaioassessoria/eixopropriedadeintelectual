@@ -1,16 +1,19 @@
 import HeroSection from '@/components/HeroSection';
-import ServicesCarousel from '@/components/ServicesCarousel';
-import INPISection from '@/components/INPISection';
-import DangerSection from '@/components/DangerSection';
-import TestimonialsStack from '@/components/TestimonialsStack';
-import StackedCards from '@/components/StackedCards';
-import BenefitsSection from '@/components/BenefitsSection';
-import StatsSection from '@/components/StatsSection';
-import HowItWorks from '@/components/HowItWorks';
-import CTABand from '@/components/CTABand';
 import HeroTransition from '@/components/HeroTransition';
-import RecentPostsSection from '@/components/RecentPostsSection';
 import { getSortedPostsData } from '@/lib/posts';
+import dynamic from 'next/dynamic';
+
+const ServicesCarousel = dynamic(() => import('@/components/ServicesCarousel'));
+const INPISection = dynamic(() => import('@/components/INPISection'));
+const DangerSection = dynamic(() => import('@/components/DangerSection'));
+const TestimonialsStack = dynamic(() => import('@/components/TestimonialsStack'));
+const StackedCards = dynamic(() => import('@/components/StackedCards'));
+const BenefitsSection = dynamic(() => import('@/components/BenefitsSection'));
+const StatsSection = dynamic(() => import('@/components/StatsSection'));
+const HowItWorks = dynamic(() => import('@/components/HowItWorks'));
+const CTABand = dynamic(() => import('@/components/CTABand'));
+const RecentPostsSection = dynamic(() => import('@/components/RecentPostsSection'));
+
 
 export default async function Home() {
     const allPosts = getSortedPostsData();

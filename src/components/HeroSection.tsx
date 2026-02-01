@@ -2,6 +2,7 @@
 
 import React, { useState } from 'react';
 import { motion } from 'framer-motion';
+import Image from 'next/image';
 import { Star, Shield, CheckCircle } from 'lucide-react';
 import { formatPhone } from '../utils/masks';
 import GlowingBorder from './ui/GlowingBorder';
@@ -16,13 +17,16 @@ const HeroSection: React.FC = () => {
   });
 
   return (
-    <section id="home" className="relative min-h-screen flex flex-col pt-24 pb-0 z-20 overflow-hidden" style={{ background: 'linear-gradient(90deg, #1480c8 0%, #65bdf8 100%)' }}>
+    <section id="home" className="relative min-h-screen flex flex-col pt-24 pb-32 lg:pb-0 z-20 overflow-hidden" style={{ background: 'linear-gradient(90deg, #1480c8 0%, #65bdf8 100%)' }}>
 
       {/* Background Overlay Image - Left aligned X */}
       <div className="absolute inset-0 z-0 pointer-events-none opacity-20 mix-blend-overlay overflow-hidden">
-        <img
+        <Image
           src="/sobreposicao_bg.png"
-          alt=""
+          alt="Background Overlay"
+          width={1000}
+          height={1000}
+          priority
           className="absolute left-[-15%] md:left-[-5%] top-1/2 -translate-y-1/2 h-[120%] w-auto object-contain max-w-none"
         />
       </div>
@@ -46,10 +50,13 @@ const HeroSection: React.FC = () => {
               >
                 {/* Large Brand Logotype */}
                 {/* Large Brand Logotype */}
-                <div className="mb-8">
-                  <img
+                <div className="mb-8 flex justify-center lg:justify-start w-full">
+                  <Image
                     src="/logo principal.png"
                     alt="Eixo Intelectual"
+                    width={300}
+                    height={100}
+                    priority
                     className="w-[200px] md:w-[300px] h-auto"
                   />
                 </div>
@@ -79,9 +86,11 @@ const HeroSection: React.FC = () => {
                 {/* Profile */}
                 <div className="flex flex-col items-center lg:items-start space-y-4 mt-8 max-w-lg mx-auto lg:mx-0">
                   <div className="flex-shrink-0">
-                    <img
+                    <Image
                       src="/atendimento exclusivo.png"
                       alt="Atendimento Exclusivo"
+                      width={180}
+                      height={180}
                       className="h-auto max-w-[180px]"
                     />
                   </div>
@@ -126,6 +135,7 @@ const HeroSection: React.FC = () => {
                         required
                         type="text"
                         name="name"
+                        aria-label="Qual seu nome?"
                         value={formState.name}
                         onChange={(e) => setFormState({ ...formState, name: e.target.value })}
                         placeholder="Qual seu nome?"
@@ -137,6 +147,7 @@ const HeroSection: React.FC = () => {
                         required
                         type="email"
                         name="email"
+                        aria-label="Email"
                         value={formState.email}
                         onChange={(e) => setFormState({ ...formState, email: e.target.value })}
                         placeholder="digiteaqui@seuemail.com"
@@ -148,6 +159,7 @@ const HeroSection: React.FC = () => {
                         required
                         type="tel"
                         name="phone"
+                        aria-label="Telefone (WhatsApp)"
                         value={formState.phone}
                         onChange={(e) => setFormState({ ...formState, phone: formatPhone(e.target.value) })}
                         maxLength={15}
@@ -160,6 +172,7 @@ const HeroSection: React.FC = () => {
                         required
                         type="text"
                         name="company"
+                        aria-label="Nome da sua empresa"
                         value={formState.company}
                         onChange={(e) => setFormState({ ...formState, company: e.target.value })}
                         placeholder="Nome da sua empresa..."
@@ -173,6 +186,7 @@ const HeroSection: React.FC = () => {
                         <select
                           required
                           name="employees"
+                          aria-label="Número de Funcionários"
                           value={formState.employees}
                           onChange={(e) => setFormState({ ...formState, employees: e.target.value })}
                           className="w-full bg-[#1a1a1a] text-gray-300 px-4 py-3.5 rounded-lg border border-gray-800 focus:outline-none focus:border-blue-500 focus:ring-1 focus:ring-blue-500 appearance-none"
