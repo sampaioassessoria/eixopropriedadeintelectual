@@ -62,7 +62,7 @@ export const metadata: Metadata = {
     },
 };
 
-import GoogleTagManager from '../components/GoogleTagManager';
+import { GoogleTagManager } from '@next/third-parties/google';
 import JsonLd from '../components/JsonLd';
 
 export default function RootLayout({

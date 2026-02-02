@@ -4,6 +4,7 @@ import React, { useState, useEffect } from 'react';
 import { Menu, X, Globe } from 'lucide-react';
 import { usePathname, useRouter } from 'next/navigation';
 import Link from 'next/link';
+import Image from 'next/image';
 
 const Header: React.FC = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
@@ -21,9 +22,12 @@ const Header: React.FC = () => {
   const router = useRouter();
 
   useEffect(() => {
-    const handleScroll = () => {
+    let lastScrollY = window.scrollY;
+    let ticking = false;
+
+    const updateScroll = () => {
       const sections = navItems.map(item => document.getElementById(item.id));
-      const scrollPosition = window.scrollY + 100;
+      const scrollPosition = lastScrollY + 100;
 
       for (let i = sections.length - 1; i >= 0; i--) {
         const section = sections[i];
@@ -31,6 +35,15 @@ const Header: React.FC = () => {
           setActiveSection(navItems[i].id);
           break;
         }
+      }
+      ticking = false;
+    };
+
+    const handleScroll = () => {
+      lastScrollY = window.scrollY;
+      if (!ticking) {
+        window.requestAnimationFrame(updateScroll);
+        ticking = true;
       }
     };
 
@@ -83,10 +96,13 @@ const Header: React.FC = () => {
           {/* Logo */}
           <div className="flex-shrink-0">
             <Link href="/">
-              <img
+              <Image
                 src="/logo principal.png"
-                alt="Eixo Intelectual"
+                alt="Eixo Intelectual - Home"
+                width={150}
+                height={40}
                 className="h-8 md:h-10 w-auto"
+                priority
               />
             </Link>
           </div>
@@ -108,7 +124,10 @@ const Header: React.FC = () => {
               </button>
             ))}
 
-            <button className="flex items-center text-blue-100 hover:text-white px-3 py-2 rounded-full bg-blue-700/50">
+            <button
+              aria-label="Mudar idioma"
+              className="flex items-center text-blue-100 hover:text-white px-3 py-2 rounded-full bg-blue-700/50"
+            >
               <Globe size={20} />
             </button>
 
@@ -124,6 +143,7 @@ const Header: React.FC = () => {
           <div className="md:hidden">
             <button
               onClick={() => setIsMenuOpen(!isMenuOpen)}
+              aria-label={isMenuOpen ? "Fechar menu" : "Abrir menu"}
               className="text-gray-300 hover:text-white p-2"
             >
               {isMenuOpen ? <X size={24} /> : <Menu size={24} />}

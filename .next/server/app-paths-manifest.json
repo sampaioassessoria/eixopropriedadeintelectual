@@ -1,0 +1,14 @@
+{
+  "/_global-error/page": "app/_global-error/page.js",
+  "/_not-found/page": "app/_not-found/page.js",
+  "/agenciadevalor/page": "app/agenciadevalor/page.js",
+  "/blog/[slug]/page": "app/blog/[slug]/page.js",
+  "/blog/page": "app/blog/page.js",
+  "/links/page": "app/links/page.js",
+  "/obrigado-parceria/page": "app/obrigado-parceria/page.js",
+  "/obrigado/page": "app/obrigado/page.js",
+  "/page": "app/page.js",
+  "/parceiros/page": "app/parceiros/page.js",
+  "/robots.txt/route": "app/robots.txt/route.js",
+  "/sitemap.xml/route": "app/sitemap.xml/route.js"
+}

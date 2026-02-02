@@ -1,8 +1,8 @@
 'use client';
 
 import React from 'react';
-import { motion } from 'framer-motion';
 import { Instagram, Linkedin, ArrowUp } from 'lucide-react';
+import Image from 'next/image';
 
 const Footer: React.FC = () => {
   const currentYear = 2026;
@@ -18,9 +18,11 @@ const Footer: React.FC = () => {
           {/* Left Column - Logo, Address and Copyright */}
           <div className="lg:col-span-4 flex flex-col justify-between h-full min-h-[300px]">
             <div className="space-y-8">
-              <img
+              <Image
                 src="/logo principal.png"
-                alt="Eixo Intelectual"
+                alt="Eixo Intelectual Logo"
+                width={150}
+                height={40}
                 className="h-8 w-auto mb-4"
               />
 
@@ -62,6 +64,7 @@ const Footer: React.FC = () => {
                 rel="noopener noreferrer"
                 className="w-12 h-12 rounded-full border border-gray-800 flex items-center justify-center text-white hover:bg-white hover:text-black transition-all duration-300"
                 title="Instagram"
+                aria-label="Instagram Eixo Intelectual"
               >
                 <Instagram size={20} />
               </a>
@@ -71,6 +74,7 @@ const Footer: React.FC = () => {
                 rel="noopener noreferrer"
                 className="w-12 h-12 rounded-full border border-gray-800 flex items-center justify-center text-white hover:bg-white hover:text-black transition-all duration-300"
                 title="LinkedIn"
+                aria-label="LinkedIn Eixo Intelectual"
               >
                 <Linkedin size={20} />
               </a>
@@ -79,6 +83,7 @@ const Footer: React.FC = () => {
             <button
               onClick={scrollToTop}
               className="flex items-center text-gray-400 hover:text-white text-sm transition-colors group mt-8 lg:mt-0"
+              aria-label="Voltar para o topo"
             >
               Voltar para o topo
               <ArrowUp size={16} className="ml-2 group-hover:-translate-y-1 transition-transform duration-300" />
@@ -89,9 +94,11 @@ const Footer: React.FC = () => {
 
       {/* Giant Logo Background - Centered */}
       <div className="w-full flex justify-center items-end pb-0">
-        <img
+        <Image
           src="/logo-rodape.svg"
           alt="Eixo Intelectual Background"
+          width={1200}
+          height={400}
           className="w-[90%] md:w-[80%] max-w-7xl h-auto opacity-100 select-none pb-0"
         />
       </div>

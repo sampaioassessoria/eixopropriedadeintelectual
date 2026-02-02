@@ -43,64 +43,58 @@ const HeroSection: React.FC = () => {
           <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
             {/* Left Column - Brand and Text */}
             <div className="lg:col-span-7 text-center lg:text-left">
-              <motion.div
-                initial={{ opacity: 0, y: 30 }}
-                animate={{ opacity: 1, y: 0 }}
-                transition={{ duration: 0.8 }}
-              >
-                {/* Large Brand Logotype */}
-                {/* Large Brand Logotype */}
-                <div className="mb-8 flex justify-center lg:justify-start w-full">
+              {/* Large Brand Logotype */}
+              {/* Large Brand Logotype */}
+              <div className="mb-8 flex justify-center lg:justify-start w-full">
+                <Image
+                  src="/logo principal.png"
+                  alt="Eixo Intelectual"
+                  width={300}
+                  height={100}
+                  priority
+                  className="w-[200px] md:w-[300px] h-auto"
+                />
+              </div>
+
+              {/* Headline Text */}
+              <div className="space-y-4 mb-8">
+                <h2 className="text-3xl md:text-5xl lg:text-6xl font-bold text-white leading-tight">
+                  Blinde o seu<br />patrimônio<br />intelectual
+                </h2>
+                <p className="text-lg md:text-2xl text-blue-100 font-light mt-4 max-w-lg mx-auto lg:mx-0">
+                  Evite o risco de perder sua marca ou patente.
+                </p>
+              </div>
+
+              {/* Reviews */}
+              <div className="flex flex-wrap items-center justify-center lg:justify-start gap-3 mb-8">
+                <span className="text-white font-semibold text-lg">Reviews</span>
+                <span className="text-blue-200 font-bold text-lg flex items-center"><span className="text-blue-400">G</span><span className="text-red-500">o</span><span className="text-yellow-400">o</span><span className="text-blue-400">g</span><span className="text-green-500">l</span><span className="text-red-500">e</span></span>
+                <div className="flex space-x-1">
+                  {[1, 2, 3, 4, 5].map((star) => (
+                    <Star key={star} className="w-5 h-5 text-yellow-400 fill-current" />
+                  ))}
+                </div>
+              </div>
+
+              {/* Profile */}
+              {/* Profile */}
+              <div className="flex flex-col items-center lg:items-start space-y-4 mt-8 max-w-lg mx-auto lg:mx-0">
+                <div className="flex-shrink-0">
                   <Image
-                    src="/logo principal.png"
-                    alt="Eixo Intelectual"
-                    width={300}
-                    height={100}
-                    priority
-                    className="w-[200px] md:w-[300px] h-auto"
+                    src="/atendimento exclusivo.png"
+                    alt="Atendimento Exclusivo"
+                    width={180}
+                    height={180}
+                    className="h-auto max-w-[180px]"
                   />
                 </div>
-
-                {/* Headline Text */}
-                <div className="space-y-4 mb-8">
-                  <h2 className="text-3xl md:text-5xl lg:text-6xl font-bold text-white leading-tight">
-                    Blinde o seu<br />patrimônio<br />intelectual
-                  </h2>
-                  <p className="text-lg md:text-2xl text-blue-100 font-light mt-4 max-w-lg mx-auto lg:mx-0">
-                    Evite o risco de perder sua marca ou patente.
+                <div className="text-center lg:text-left">
+                  <p className="text-blue-100 text-sm leading-snug">
+                    Consultoria com o sócio fundador Guilherme Stefanello, advogado, especialista em Propriedade Intelectual pela UCB.
                   </p>
                 </div>
-
-                {/* Reviews */}
-                <div className="flex flex-wrap items-center justify-center lg:justify-start gap-3 mb-8">
-                  <span className="text-white font-semibold text-lg">Reviews</span>
-                  <span className="text-blue-200 font-bold text-lg flex items-center"><span className="text-blue-400">G</span><span className="text-red-500">o</span><span className="text-yellow-400">o</span><span className="text-blue-400">g</span><span className="text-green-500">l</span><span className="text-red-500">e</span></span>
-                  <div className="flex space-x-1">
-                    {[1, 2, 3, 4, 5].map((star) => (
-                      <Star key={star} className="w-5 h-5 text-yellow-400 fill-current" />
-                    ))}
-                  </div>
-                </div>
-
-                {/* Profile */}
-                {/* Profile */}
-                <div className="flex flex-col items-center lg:items-start space-y-4 mt-8 max-w-lg mx-auto lg:mx-0">
-                  <div className="flex-shrink-0">
-                    <Image
-                      src="/atendimento exclusivo.png"
-                      alt="Atendimento Exclusivo"
-                      width={180}
-                      height={180}
-                      className="h-auto max-w-[180px]"
-                    />
-                  </div>
-                  <div className="text-center lg:text-left">
-                    <p className="text-blue-100 text-sm leading-snug">
-                      Consultoria com o sócio fundador Guilherme Stefanello, advogado, especialista em Propriedade Intelectual pela UCB.
-                    </p>
-                  </div>
-                </div>
-              </motion.div>
+              </div>
             </div>
 
             {/* Right Column - Form Card */}
