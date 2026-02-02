@@ -77,10 +77,12 @@ const TestimonialsStack: React.FC = () => {
       {/* World Map Background */}
       <div className="absolute inset-x-0 top-20 flex justify-center pointer-events-none">
         <div className="h-[677px] w-auto opacity-100 relative">
-          <img
+          <Image
             src="/globo.png"
             alt="World Map Background"
-            className="h-full w-auto object-contain"
+            fill
+            sizes="100vw"
+            className="object-contain"
           />
         </div>
       </div>

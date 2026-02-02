@@ -10,7 +10,17 @@ const CTABand: React.FC = () => {
       {/* Background Overlay Image */}
       {/* Background Overlay Image */}
       <div className="absolute inset-0 z-0 pointer-events-none opacity-30 mix-blend-overlay flex items-center justify-center">
-        <img src="/sobreposicao_bg.png" alt="" className="h-[130%] w-auto object-contain" />
+        import Image from 'next/image';
+
+        // ... (top of file)
+
+        <Image
+          src="/sobreposicao_bg.png"
+          alt=""
+          fill
+          sizes="100vw"
+          className="object-contain opacity-30 mix-blend-overlay"
+        />
       </div>
 
       <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center relative z-10">

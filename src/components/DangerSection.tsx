@@ -59,9 +59,16 @@ const DangerSection: React.FC = () => {
             viewport={{ once: true }}
             className="relative"
           >
-            <img
+            import Image from 'next/image';
+
+            // ... (top of file)
+
+            // Inside the component return
+            <Image
               src="/imagem noticias.png"
               alt="Notícias sobre riscos de marca"
+              width={800}
+              height={500}
               className="max-w-full h-auto drop-shadow-2xl rounded-lg"
             />
           </motion.div>

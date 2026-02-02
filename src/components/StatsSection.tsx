@@ -4,6 +4,7 @@ import React from 'react';
 
 import { motion } from 'framer-motion';
 import { Star } from 'lucide-react';
+import Image from 'next/image';
 
 const StatsSection: React.FC = () => {
   return (
@@ -50,9 +51,9 @@ const StatsSection: React.FC = () => {
               className="inline-flex items-center bg-[#111] border border-gray-800 rounded-full p-2 pr-8 gap-4 shadow-lg shadow-blue-900/10"
             >
               <div className="flex -space-x-3 pl-2">
-                <img className="w-10 h-10 rounded-full border-2 border-black" src="https://images.unsplash.com/photo-1534528741775-53994a69daeb?auto=format&fit=crop&w=64&h=64" alt="User" />
-                <img className="w-10 h-10 rounded-full border-2 border-black" src="https://images.unsplash.com/photo-1506794778202-cad84cf45f1d?auto=format&fit=crop&w=64&h=64" alt="User" />
-                <img className="w-10 h-10 rounded-full border-2 border-black" src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?auto=format&fit=crop&w=64&h=64" alt="User" />
+                <Image className="rounded-full border-2 border-black object-cover" src="https://images.unsplash.com/photo-1534528741775-53994a69daeb?auto=format&fit=crop&w=64&h=64" alt="User 1" width={40} height={40} />
+                <Image className="rounded-full border-2 border-black object-cover" src="https://images.unsplash.com/photo-1506794778202-cad84cf45f1d?auto=format&fit=crop&w=64&h=64" alt="User 2" width={40} height={40} />
+                <Image className="rounded-full border-2 border-black object-cover" src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?auto=format&fit=crop&w=64&h=64" alt="User 3" width={40} height={40} />
               </div>
               <div className="flex flex-col">
                 <div className="flex items-center gap-2">
@@ -126,10 +127,12 @@ const StatsSection: React.FC = () => {
                 key={index}
                 className="flex-shrink-0 w-72 h-48 rounded-xl overflow-hidden border border-gray-800 relative group"
               >
-                <img
+                <Image
                   src={`/carrossel/${img}`}
                   alt={`Gallery Image ${index}`}
-                  className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110 opacity-80 group-hover:opacity-100"
+                  fill
+                  sizes="(max-width: 768px) 100vw, 300px"
+                  className="object-cover transition-transform duration-500 group-hover:scale-110 opacity-80 group-hover:opacity-100"
                 />
                 <div className="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent"></div>
               </div>

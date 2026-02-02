@@ -23,11 +23,11 @@ const HeroSection: React.FC = () => {
       <div className="absolute inset-0 z-0 pointer-events-none opacity-20 mix-blend-overlay overflow-hidden">
         <Image
           src="/sobreposicao_bg.png"
-          alt="Background Overlay"
-          width={1000}
-          height={1000}
+          alt=""
+          fill
           priority
-          className="absolute left-[-15%] md:left-[-5%] top-1/2 -translate-y-1/2 h-[120%] w-auto object-contain max-w-none"
+          sizes="100vw"
+          className="object-cover object-center opacity-20 mix-blend-overlay"
         />
       </div>
 
