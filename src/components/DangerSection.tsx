@@ -1,6 +1,7 @@
 'use client';
 
 import React from 'react';
+import Image from 'next/image';
 
 import { motion } from 'framer-motion';
 
@@ -59,11 +60,6 @@ const DangerSection: React.FC = () => {
             viewport={{ once: true }}
             className="relative"
           >
-            import Image from 'next/image';
-
-            // ... (top of file)
-
-            // Inside the component return
             <Image
               src="/imagem noticias.png"
               alt="Notícias sobre riscos de marca"
