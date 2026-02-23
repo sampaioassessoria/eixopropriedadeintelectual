@@ -1090,10 +1090,6 @@ img, video {
   left: 1rem;
 }
 
-.left-\[-15\%\] {
-  left: -15%;
-}
-
 .right-0 {
   right: 0;
 }
@@ -1104,10 +1100,6 @@ img, video {
 
 .top-0 {
   top: 0;
-}
-
-.top-1\/2 {
-  top: 50%;
 }
 
 .top-20 {
@@ -1415,14 +1407,6 @@ img, video {
 
 .h-8 {
   height: 2rem;
-}
-
-.h-\[120\%\] {
-  height: 120%;
-}
-
-.h-\[130\%\] {
-  height: 130%;
 }
 
 .h-\[1px\] {
@@ -3925,10 +3909,6 @@ html {
 }
 
 @media (min-width: 768px) {
-  .md\:left-\[-5\%\] {
-    left: -5%;
-  }
-
   .md\:top-32 {
     top: 8rem;
   }

@@ -313,7 +313,7 @@ export default function AgenciaDeValor() { // Renamed to default export function
                     <div className="mt-12 text-center">
                         <p className="text-gray-400 mb-6">Ainda tem dúvidas?</p>
                         <a
-                            href="https://wa.me/5548988364246"
+                            href="https://wa.me/48988362646"
                             target="_blank"
                             rel="noopener noreferrer"
                             className="inline-flex items-center justify-center px-8 py-3 border border-gray-700 rounded-full hover:bg-white/5 hover:border-blue-500 transition-all text-white font-medium gap-2"

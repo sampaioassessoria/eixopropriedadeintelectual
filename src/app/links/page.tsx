@@ -131,7 +131,7 @@ const LinksPage: React.FC = () => {
 
                     {/* Fale Conosco */}
                     <LinkButton
-                        href="https://wa.me/5548988364246"
+                        href="https://wa.me/48988362646"
                         title="Fale Conosco"
                         subtext="Atendimento via WhatsApp"
                         icon="/fale_conosco_icon.png"
