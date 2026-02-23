@@ -1,6 +1,7 @@
 'use client';
 
 import React from 'react';
+import Image from 'next/image';
 
 import { motion } from 'framer-motion';
 
@@ -10,10 +11,6 @@ const CTABand: React.FC = () => {
       {/* Background Overlay Image */}
       {/* Background Overlay Image */}
       <div className="absolute inset-0 z-0 pointer-events-none opacity-30 mix-blend-overlay flex items-center justify-center">
-        import Image from 'next/image';
-
-        // ... (top of file)
-
         <Image
           src="/sobreposicao_bg.png"
           alt=""
