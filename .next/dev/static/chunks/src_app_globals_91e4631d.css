@@ -2583,6 +2583,11 @@ img, video {
   object-fit: cover;
 }
 
+.object-center {
+  -o-object-position: center;
+  object-position: center;
+}
+
 .p-1 {
   padding: .25rem;
 }
