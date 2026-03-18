@@ -14,7 +14,7 @@ export default function JsonLd() {
                 ],
                 contactPoint: {
                     '@type': 'ContactPoint',
-                    telephone: '+55-11-99999-9999', // Placeholder
+                    telephone: '+55-48-8836-2646',
                     contactType: 'customer service',
                     areaServed: 'BR',
                     availableLanguage: 'Portuguese',
