@@ -75,8 +75,8 @@ export default async function Post({ params }: { params: Promise<{ slug: string 
                     <div className="p-10 bg-[#1a1a1a] rounded-2xl border border-gray-800">
                         <h3 className="text-2xl font-bold mb-3 text-white">Gostou deste artigo?</h3>
                         <p className="text-gray-400 mb-8 max-w-2xl mx-auto">Compartilhe com seus amigos ou entre em contato para saber mais sobre nossos serviços.</p>
-                        <Link href="/fale-conosco" className="inline-block bg-[#007bff] hover:bg-blue-600 text-white font-bold py-4 px-10 rounded-lg transition-colors shadow-lg hover:shadow-blue-500/20 uppercase tracking-wide text-sm">
-                            Fale Conosco
+                        <Link href="/#home" className="inline-block bg-[#007bff] hover:bg-blue-600 text-white font-bold py-4 px-10 rounded-lg transition-colors shadow-lg hover:shadow-blue-500/20 uppercase tracking-wide text-sm">
+                            Solicitar Análise Gratuita
                         </Link>
                     </div>
                 </footer>

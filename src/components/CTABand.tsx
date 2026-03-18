@@ -2,7 +2,7 @@
 
 import React from 'react';
 import Image from 'next/image';
-
+import Link from 'next/link';
 import { motion } from 'framer-motion';
 
 const CTABand: React.FC = () => {
@@ -35,12 +35,12 @@ const CTABand: React.FC = () => {
             Clique no botão de abaixo e solicite uma análise de marca gratuita
           </p>
 
-          <button
-            onClick={() => document.getElementById('home')?.scrollIntoView({ behavior: 'smooth' })}
-            className="bg-[#111111] text-white px-10 py-4 rounded-full font-medium text-lg hover:bg-black transition-all duration-300 shadow-lg hover:shadow-xl transform hover:-translate-y-1"
+          <Link
+            href="/#home"
+            className="bg-[#111111] text-white px-10 py-4 rounded-full font-medium text-lg hover:bg-black transition-all duration-300 shadow-lg hover:shadow-xl transform hover:-translate-y-1 inline-block"
           >
             Solicitar Análise
-          </button>
+          </Link>
         </motion.div>
       </div>
     </section>

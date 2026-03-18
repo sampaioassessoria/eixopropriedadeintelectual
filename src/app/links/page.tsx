@@ -151,7 +151,7 @@ const LinksPage: React.FC = () => {
 
                     {/* Artigos */}
                     <LinkButton
-                        href="/#artigos"
+                        href="/blog"
                         title="Artigos"
                         subtext="Fique por dentro das novidades"
                         icon="/artigos_icon.png"
