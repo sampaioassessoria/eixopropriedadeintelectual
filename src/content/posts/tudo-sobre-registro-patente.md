@@ -4,7 +4,7 @@ date: "2025-03-11"
 excerpt: "Tem uma invenção revolucionária? Entenda a diferença entre Invenção e Modelo de Utilidade, os requisitos de patenteabilidade e como garantir seu monopólio comercial."
 author: "Eixo Intelectual"
 category: "Patentes"
-coverImage: "/images/blog/blog_patente_geral.png"
+coverImage: "/images/blog/photor_patente_geral_1773835596606.png"
 ---
 
 A **patente** é o contrato definitivo entre o inventor e o Estado. Em troca de você revelar ao mundo como sua invenção funciona (permitindo o avanço da ciência), o Estado lhe concede o direito de **monopólio comercial temporário**.

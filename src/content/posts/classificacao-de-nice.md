@@ -4,7 +4,7 @@ date: "2026-03-17"
 excerpt: "A escolha incorreta das classes é uma das principais causas de indeferimento ou conflitos no registro de marca. Entenda como funciona a Classificação de Nice na prática."
 author: "Guilherme Stefanello"
 category: "Registro de Marca"
-coverImage: "/images/blog/nice_class_blog_1773791046239.png"
+coverImage: "/images/blog/photor_classificacao_nice_1773835496390.png"
 ---
 
 Quando um empresário decide registrar uma marca no INPI, normalmente o foco está no nome, no logotipo ou na identidade visual. Poucos sabem, porém, que um dos pontos mais importantes — e mais negligenciados — do registro de marca é a **Classificação de Nice**.

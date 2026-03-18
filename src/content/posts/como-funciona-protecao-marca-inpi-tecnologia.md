@@ -4,7 +4,7 @@ date: "2025-03-05"
 excerpt: "Empresas de tecnologia vivem de inovação, mas sem proteção, essa inovação pode ser roubada. Entenda como blindar sua marca e garantir exclusividade no mercado."
 author: "Eixo Intelectual"
 category: "Marcas nacionais e Internacionais"
-coverImage: "/images/blog/blog_inpi_tecnologia.png"
+coverImage: "/images/blog/photor_inpi_tecnologia_1773835624154.png"
 ---
 
 Para **empresas de tecnologia**, a marca é muito mais do que um logotipo bonito. Ela representa a confiança, a inovação e a reputação construída em um mercado extremamente ágil e competitivo.

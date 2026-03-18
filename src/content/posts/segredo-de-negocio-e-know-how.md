@@ -4,7 +4,7 @@ date: "2026-03-17"
 excerpt: "Descubra o que é segredo de negócio e know-how, e entenda em que situações manter o sigilo é uma proteção mais eficiente que o registro de patentes."
 author: "Guilherme Stefanello"
 category: "Estratégia Empresarial"
-coverImage: "/images/blog/segredo_negocio_blog_1773791196085.png"
+coverImage: "/images/blog/photor_segredo_negocio_1773835432471.png"
 ---
 
 Quando se fala em propriedade intelectual, muitas pessoas pensam automaticamente em registro. No entanto, nem toda inovação precisa — ou deve — ser registrada. Em muitos casos, a proteção mais eficiente é manter determinadas informações como **segredo de negócio ou know-how**.

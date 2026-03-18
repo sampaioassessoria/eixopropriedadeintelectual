@@ -4,7 +4,7 @@ date: "2026-03-17"
 excerpt: "Por que o registro de marca não se decide no Google. A importância de uma análise técnica nas bases do INPI para evitar surpresas e investimentos perdidos."
 author: "Guilherme Stefanello"
 category: "Registro de Marca"
-coverImage: "/images/blog/pesquisa_anterioridade_blog_1773791079923.png"
+coverImage: "/images/blog/photor_pesquisa_anterioridade_1773835480982.png"
 ---
 
 Uma das frases mais comuns ouvidas por profissionais de propriedade intelectual é:

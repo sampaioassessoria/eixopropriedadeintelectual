@@ -4,7 +4,7 @@ date: "2025-03-03"
 excerpt: "Entenda os riscos reais de operar na informalidade e como o registro no INPI é o único caminho para garantir a propriedade do seu maior ativo."
 author: "Eixo Intelectual"
 category: "Marcas nacionais e Internacionais"
-coverImage: "/images/blog/blog_registro_essencial.png"
+coverImage: "/images/blog/photor_registro_essencial_1773835581471.png"
 ---
 
 Você sabia que, no Brasil, **quem não registra não é dono**?

@@ -4,7 +4,7 @@ date: "2026-03-17"
 excerpt: "Descubra como a clareza sobre a titularidade da propriedade intelectual é decisiva para viabilizar investimentos, parcerias e a venda de empresas."
 author: "Guilherme Stefanello"
 category: "Estratégia Empresarial"
-coverImage: "/images/blog/propriedade_intelectual_contratos_blog_1773791293911.png"
+coverImage: "/images/blog/photor_contratos_pi_1773835467027.png"
 ---
 
 Em negociações empresariais mais estruturadas, existe uma pergunta que sempre aparece antes de qualquer assinatura: **quem é o verdadeiro dono da marca, da tecnologia e dos ativos intangíveis do negócio?**

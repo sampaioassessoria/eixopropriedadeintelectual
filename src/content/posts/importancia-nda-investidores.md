@@ -4,7 +4,7 @@ date: "2025-03-08"
 excerpt: "Vai apresentar sua ideia revolucionária? Saiba quando e como usar um Acordo de Não Divulgação (NDA) para evitar roubo de propriedade intelectual sem assustar investidores."
 author: "Eixo Intelectual"
 category: "Direitos Autorais"
-coverImage: "/images/blog/blog_nda_investidores.png"
+coverImage: "/images/blog/photor_nda_investidores_1773835710403.png"
 ---
 
 Você teve a ideia de um milhão de dólares. Montou um pitch deck impecável. Conseguiu a reunião com aquele investidor anjo que pode mudar o jogo.

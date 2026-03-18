@@ -4,7 +4,7 @@ date: "2026-03-17"
 excerpt: "Por que a proteção automática não é suficiente? Entenda como funciona o registro de software no INPI e como provar a autoria do seu código."
 author: "Guilherme Stefanello"
 category: "Software e Tecnologia"
-coverImage: "/images/blog/lei_de_software_blog_1773791351729.png"
+coverImage: "/images/blog/photor_lei_software_1773835568574.png"
 ---
 
 No Brasil, programas de computador são protegidos por uma legislação específica, distinta das patentes e das marcas. Ainda assim, muitas empresas e desenvolvedores desconhecem como essa proteção funciona — e acabam ficando juridicamente expostos.

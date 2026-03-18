@@ -4,7 +4,7 @@ date: "2025-03-12"
 excerpt: "Sua empresa nasceu global? Descubra como proteger sua marca em mais de 120 países simultaneamente com um único processo simplificado."
 author: "Eixo Intelectual"
 category: "Marcas nacionais e Internacionais"
-coverImage: "/images/blog/blog_madri_internacional.png"
+coverImage: "/images/blog/photor_madri_internacional_1773835693401.png"
 ---
 
 Até pouco tempo atrás, registrar uma marca no exterior era um pesadelo logístico e financeiro.

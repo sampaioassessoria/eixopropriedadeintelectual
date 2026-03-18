@@ -4,7 +4,7 @@ date: "2025-03-07"
 excerpt: "O código é o coração da sua empresa tech. Saiba por que o registro de software é fundamental para segurança jurídica, licitações e atração de investidores."
 author: "Eixo Intelectual"
 category: "Software"
-coverImage: "/images/blog/blog_registro_software.png"
+coverImage: "/images/blog/photor_registro_software_1773835611743.png"
 ---
 
 No Brasil, o **software** (programa de computador) é protegido pela Lei de Direito Autoral (Lei 9.609/98). Isso significa que, tecnicamente, a proteção nasce no momento em que você escreve o código.

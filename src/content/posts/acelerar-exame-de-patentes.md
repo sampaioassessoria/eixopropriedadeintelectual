@@ -4,7 +4,7 @@ date: "2026-03-17"
 excerpt: "Descubra os mecanismos legais para acelerar o exame de patentes no INPI, como PPH e CEPH, e entenda quando essa estratégia vale a pena."
 author: "Guilherme Stefanello"
 category: "Patentes"
-coverImage: "/images/blog/acelerar_patentes_blog_1773791151295.png"
+coverImage: "/images/blog/photor_acelerar_patentes_1773835451715.png"
 ---
 
 Um dos maiores receios de quem pensa em registrar uma patente no Brasil é o tempo. Não é incomum ouvir que o exame pode levar muitos anos, o que gera insegurança e desestimula a proteção da inovação. O que muitos empresários e inventores não sabem é que existem **mecanismos legais para acelerar o exame de patentes no INPI**.

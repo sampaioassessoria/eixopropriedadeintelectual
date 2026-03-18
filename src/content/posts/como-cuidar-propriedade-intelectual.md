@@ -4,7 +4,7 @@ date: "2025-03-09"
 excerpt: "Propriedade Intelectual não é apenas burocracia, é estratégia de crescimento. Aprenda a auditar, proteger e valorizar os ativos intangíveis do seu negócio com este guia completo."
 author: "Eixo Intelectual"
 category: "Desenho Empresarial"
-coverImage: "/images/blog/blog_gestao_estrategica.png"
+coverImage: "/images/blog/photor_gestao_estrategica_1773835724108.png"
 ---
 
 Muitos empreendedores e gestores só lembram da **Propriedade Intelectual (PI)** quando recebem uma notificação extrajudicial ou percebem que um concorrente copiou seu produto. No entanto, a gestão de PI deve ser **proativa** e **estratégica**.
