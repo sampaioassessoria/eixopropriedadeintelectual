@@ -4,7 +4,7 @@ date: "2025-03-04"
 excerpt: "Muitos empreendedores confundem, mas proteger uma invenção é diferente de proteger um nome. Saiba qual registro sua empresa realmente precisa."
 author: "Eixo Intelectual"
 category: "Patentes"
-coverImage: "/images/blog/blog_patente_marca.png"
+coverImage: "/images/blog/photor_patente_marca_1773792235680.png"
 ---
 
 Uma das perguntas mais frequentes que recebemos na **Eixo Intelectual** é: *"Como faço para patentear minha marca?"*.

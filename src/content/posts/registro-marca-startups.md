@@ -4,7 +4,7 @@ date: "2025-03-06"
 excerpt: "Startups precisam de velocidade, mas ignorar o registro da marca pode ser um erro fatal. Saiba como alinhar a proteção do INPI com sua estratégia de growth."
 author: "Eixo Intelectual"
 category: "Novidades"
-coverImage: "/images/blog/blog_startups_growth.png"
+coverImage: "/images/blog/photor_marca_startups_1773792338509.png"
 ---
 
 No universo das startups, a regra é "Move fast and break things" (Mova-se rápido e quebre coisas). Mas existe uma coisa que você definitivamente **não quer quebrar**: a propriedade da sua marca.

@@ -4,7 +4,7 @@ date: "2025-03-10"
 excerpt: "O design do seu produto é único? Descubra como o Registro de Desenho Industrial (DI) protege a estética e a forma plástica de objetos contra cópias."
 author: "Eixo Intelectual"
 category: "Desenhos Industriais"
-coverImage: "/images/blog/blog_desenho_industrial.png"
+coverImage: "/images/blog/photor_desenho_industrial_1773792187157.png"
 ---
 
 Quando pensamos em proteção no INPI, logo vêm à mente marcas e patentes. Mas existe uma terceira via fundamental para empresas que investem em design: o **Registro de Desenho Industrial (DI)**.
