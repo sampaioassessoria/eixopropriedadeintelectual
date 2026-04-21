@@ -436,9 +436,9 @@ const Footer = ()=>{
                                             columnNumber: 15
                                         }, ("TURBOPACK compile-time value", void 0)),
                                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("a", {
-                                            href: "tel:+5548988364246",
+                                            href: "tel:+5548988362646",
                                             className: "text-gray-300 hover:text-white transition-colors text-sm block",
-                                            children: "+55 (48) 98836-4246"
+                                            children: "+55 48 8836-2646"
                                         }, void 0, false, {
                                             fileName: "[project]/src/components/Footer.tsx",
                                             lineNumber: 52,
