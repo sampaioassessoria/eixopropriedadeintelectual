@@ -20,8 +20,19 @@ export default function Parceiros() {
         setFormData({ ...formData, telefone: formatted });
     };
 
-    const handleSubmit = (e: React.FormEvent) => {
+    const handleSubmit = async (e: React.FormEvent) => {
         e.preventDefault();
+        try {
+            await fetch('https://n8n.smpdev.site/webhook/05d84367-94b6-4a98-879e-894bb658f1a9', {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json',
+                },
+                body: JSON.stringify(formData),
+            });
+        } catch (error) {
+            console.error('Error sending data to webhook:', error);
+        }
         router.push('/obrigado-parceria');
     };
 

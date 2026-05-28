@@ -112,7 +112,7 @@ const HeroSection: React.FC = () => {
                   <form className="space-y-4" onSubmit={async (e) => {
                     e.preventDefault();
                     try {
-                      await fetch('https://n8n.sampaioservices.cloud/webhook/75c86d88-3d63-43c5-ba19-8531323f28b2', {
+                      await fetch('https://n8n.smpdev.site/webhook/75c86d88-3d63-43c5-ba19-8531323f28b2', {
                         method: 'POST',
                         headers: {
                           'Content-Type': 'application/json',
