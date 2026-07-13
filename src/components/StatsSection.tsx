@@ -77,7 +77,7 @@ const StatsSection: React.FC = () => {
               viewport={{ once: true }}
               transition={{ duration: 0.6, delay: 0.3 }}
             >
-              <h3 className="text-4xl md:text-6xl font-bold text-blue-600 mb-2">+ de 700</h3>
+              <h3 className="text-4xl md:text-6xl font-bold text-blue-600 mb-2">+ de 1.500</h3>
               <p className="text-gray-400 text-lg">Marcas Registradas</p>
             </motion.div>
 
@@ -97,7 +97,7 @@ const StatsSection: React.FC = () => {
               viewport={{ once: true }}
               transition={{ duration: 0.6, delay: 0.5 }}
             >
-              <h3 className="text-4xl md:text-6xl font-bold text-blue-600 mb-2">+ de 200</h3>
+              <h3 className="text-4xl md:text-6xl font-bold text-blue-600 mb-2">+ de 400</h3>
               <p className="text-gray-400 text-lg">Startups Protegidas!</p>
             </motion.div>
           </div>
