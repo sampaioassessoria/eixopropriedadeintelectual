@@ -10,6 +10,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
         '/blog',
         '/parceiros',
         '/obrigado',
+        '/politica-privacidade',
     ].map((route) => ({
         url: `${baseUrl}${route}`,
         lastModified: new Date(),

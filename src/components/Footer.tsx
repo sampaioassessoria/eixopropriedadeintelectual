@@ -3,6 +3,7 @@
 import React from 'react';
 import { Instagram, Linkedin, ArrowUp } from 'lucide-react';
 import Image from 'next/image';
+import Link from 'next/link';
 
 const Footer: React.FC = () => {
   const currentYear = 2026;
@@ -34,8 +35,16 @@ const Footer: React.FC = () => {
               </div>
             </div>
 
-            <div className="text-gray-500 text-xs mt-8 lg:mt-0">
-              © {currentYear} Copyright - Eixo Propriedade Intelectual
+            <div className="mt-8 lg:mt-0 space-y-3">
+              <Link
+                href="/politica-privacidade"
+                className="text-gray-400 hover:text-white transition-colors text-xs block"
+              >
+                Política de Privacidade
+              </Link>
+              <div className="text-gray-500 text-xs">
+                © {currentYear} Copyright - Eixo Propriedade Intelectual
+              </div>
             </div>
           </div>
 

@@ -1,0 +1,16 @@
+{
+  "/_global-error/page": "/_global-error",
+  "/_not-found/page": "/_not-found",
+  "/agenciadevalor/page": "/agenciadevalor",
+  "/aniversario/page": "/aniversario",
+  "/blog/[slug]/page": "/blog/[slug]",
+  "/blog/page": "/blog",
+  "/links/page": "/links",
+  "/obrigado-parceria/page": "/obrigado-parceria",
+  "/obrigado/page": "/obrigado",
+  "/page": "/",
+  "/parceiros/page": "/parceiros",
+  "/politica-privacidade/page": "/politica-privacidade",
+  "/robots.txt/route": "/robots.txt",
+  "/sitemap.xml/route": "/sitemap.xml"
+}
