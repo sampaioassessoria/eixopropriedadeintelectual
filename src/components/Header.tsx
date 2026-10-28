@@ -73,6 +73,12 @@ const Header: React.FC = () => {
       return;
     }
 
+    // Na landing da Black Friday, "Solicitar Análise" leva ao formulário da própria página
+    if (pathname === '/black' && sectionId === 'home') {
+      document.getElementById('home')?.scrollIntoView({ behavior: 'smooth' });
+      return;
+    }
+
     if (pathname !== '/') {
       router.push(`/#${sectionId}`);
     } else {
