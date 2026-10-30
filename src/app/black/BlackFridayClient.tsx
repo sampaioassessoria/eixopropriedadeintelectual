@@ -245,6 +245,50 @@ export default function BlackFridayClient() {
                         <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
                             {/* Coluna da promessa */}
                             <div className="lg:col-span-7 text-center lg:text-left">
+                                {/* Prova social em destaque: avaliações do Google */}
+                                <motion.div
+                                    initial={{ opacity: 0, y: -12, scale: 0.97 }}
+                                    animate={{ opacity: 1, y: 0, scale: 1 }}
+                                    transition={{ duration: 0.6 }}
+                                    className="relative inline-flex flex-col sm:flex-row items-center gap-3 sm:gap-6 px-6 py-5 sm:py-4 rounded-2xl bg-gradient-to-br from-yellow-400/[0.10] via-white/[0.04] to-transparent border border-yellow-400/40 shadow-[0_0_60px_rgba(250,204,21,0.15)] mb-6"
+                                >
+                                    <div className="flex flex-col items-center sm:items-start gap-1.5">
+                                        <span className="font-bold text-3xl md:text-4xl leading-none flex items-center tracking-tight" aria-label="Google">
+                                            <span className="text-[#4285F4]">G</span>
+                                            <span className="text-[#EA4335]">o</span>
+                                            <span className="text-[#FBBC05]">o</span>
+                                            <span className="text-[#4285F4]">g</span>
+                                            <span className="text-[#34A853]">l</span>
+                                            <span className="text-[#EA4335]">e</span>
+                                        </span>
+                                        <div className="flex gap-1" role="img" aria-label="Avaliação 5 estrelas">
+                                            {[0, 1, 2, 3, 4].map((i) => (
+                                                <motion.span
+                                                    key={i}
+                                                    initial={{ opacity: 0, scale: 0.4 }}
+                                                    animate={{ opacity: 1, scale: 1 }}
+                                                    transition={{ duration: 0.35, delay: 0.3 + i * 0.08, type: 'spring', stiffness: 400 }}
+                                                >
+                                                    <Star className="w-7 h-7 md:w-8 md:h-8 text-yellow-400 fill-current drop-shadow-[0_0_8px_rgba(250,204,21,0.5)]" />
+                                                </motion.span>
+                                            ))}
+                                        </div>
+                                    </div>
+                                    <div className="hidden sm:block w-px self-stretch bg-white/15" aria-hidden="true" />
+                                    <div className="w-12 h-px bg-white/15 sm:hidden" aria-hidden="true" />
+                                    <p className="text-center sm:text-left leading-tight">
+                                        <span className="block text-yellow-300 text-xs md:text-sm font-semibold uppercase tracking-[0.18em] mb-1">
+                                            Avaliações 5 estrelas
+                                        </span>
+                                        <span className="block text-white text-xl md:text-2xl font-bold">
+                                            A mais bem avaliada
+                                            <br />
+                                            de Santa Catarina
+                                        </span>
+                                    </p>
+                                </motion.div>
+
+                                <div aria-hidden="true" />
                                 <motion.div
                                     initial={{ opacity: 0, y: -10 }}
                                     animate={{ opacity: 1, y: 0 }}
@@ -330,23 +374,8 @@ export default function BlackFridayClient() {
                                     </SpinBorder>
                                 </motion.div>
 
-                                <div className="flex flex-col sm:flex-row items-center justify-center lg:justify-start gap-4 sm:gap-6">
-                                    <div className="flex items-center gap-2">
-                                        <span className="font-bold text-lg flex items-center" aria-label="Google">
-                                            <span className="text-blue-400">G</span>
-                                            <span className="text-red-500">o</span>
-                                            <span className="text-yellow-400">o</span>
-                                            <span className="text-blue-400">g</span>
-                                            <span className="text-green-500">l</span>
-                                            <span className="text-red-500">e</span>
-                                        </span>
-                                        <div className="flex space-x-0.5" aria-label="5 estrelas">
-                                            {[1, 2, 3, 4, 5].map((star) => (
-                                                <Star key={star} className="w-4 h-4 text-yellow-400 fill-current" />
-                                            ))}
-                                        </div>
-                                    </div>
-                                    <p className="text-gray-400 text-sm max-w-sm text-center sm:text-left leading-snug">
+                                <div className="flex justify-center lg:justify-start">
+                                    <p className="text-gray-400 text-sm max-w-md text-center lg:text-left leading-snug">
                                         <strong className="text-white">+ de 1.500 marcas registradas</strong> e + de 400
                                         startups protegidas. Consultoria com o sócio fundador Guilherme Stefanello.
                                     </p>
