@@ -195,8 +195,7 @@ export default function BlackFridayClient() {
 
     // Barra fixa no celular aparece quando o formulário sai da tela.
     const { ref: formRef, inView: formInView } = useInView({ initialInView: true });
-    const { ref: finalRef, inView: finalInView } = useInView();
-    const showStickyBar = !formInView && !finalInView;
+    const showStickyBar = !formInView;
 
     const handleSubmit = async (e: React.FormEvent) => {
         e.preventDefault();
@@ -710,38 +709,6 @@ export default function BlackFridayClient() {
                             </details>
                         ))}
                     </div>
-                </div>
-            </section>
-
-            {/* ===== CTA final ===== */}
-            <section ref={finalRef} className="py-24 md:py-28 bg-[#007bff] relative overflow-hidden">
-                <div className="absolute inset-0 z-0 pointer-events-none opacity-30 mix-blend-overlay" aria-hidden="true">
-                    <Image src="/sobreposicao_bg.png" alt="" fill sizes="100vw" className="object-contain" />
-                </div>
-                <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center relative z-10">
-                    <motion.div {...fadeUp} transition={{ duration: 0.6 }}>
-                        <h2 className="text-3xl md:text-5xl font-bold text-white mb-6 leading-tight">
-                            A Black Friday acaba.
-                            <br />
-                            <span className="text-black/80">
-                                O risco de alguém registrar sua marca primeiro, não.
-                            </span>
-                        </h2>
-                        <p className="text-blue-50 text-lg mb-10 max-w-2xl mx-auto">
-                            Descubra hoje se a sua marca pode ser registrada, com análise gratuita e {OFFER.discount}% de
-                            desconto nos honorários.
-                        </p>
-                        <button
-                            onClick={scrollToForm}
-                            className="bg-[#050505] text-white px-10 py-4 rounded-full font-semibold text-lg hover:bg-black transition-all duration-300 shadow-lg hover:-translate-y-1 inline-flex items-center gap-2"
-                        >
-                            Quero analisar minha marca grátis <ArrowRight className="w-5 h-5" aria-hidden="true" />
-                        </button>
-                        <p className="text-blue-100/80 text-xs mt-10">
-                            Desconto de {OFFER.discount}% sobre os honorários da Eixo, válido durante a Black Friday. Taxas do
-                            INPI à parte.
-                        </p>
-                    </motion.div>
                 </div>
             </section>
 
