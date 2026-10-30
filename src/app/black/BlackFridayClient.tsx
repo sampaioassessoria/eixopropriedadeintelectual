@@ -259,10 +259,6 @@ const FAQ = [
         a: 'Para os honorários da Eixo no registro de marca, software e desenho industrial. As taxas oficiais do INPI são cobradas à parte, como em qualquer escritório.',
     },
     {
-        q: 'Até quando vale a condição?',
-        a: 'De 17 a 30 de novembro de 2026, até 23h59 (horário de Brasília). Depois disso, os honorários voltam ao valor normal.',
-    },
-    {
         q: 'E se a minha marca não puder ser registrada?',
         a: 'É para isso que serve a análise gratuita: ela mostra a viabilidade da marca antes de você contratar. Se houver risco, avisamos antes de você investir.',
     },
