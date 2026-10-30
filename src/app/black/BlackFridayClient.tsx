@@ -566,6 +566,38 @@ export default function BlackFridayClient() {
 
             <Tapes />
 
+            {/* ===== Faixa de oferta ===== */}
+            <section className="py-24 relative overflow-hidden border-t border-white/5">
+                <div className="absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 w-[80vw] md:w-[50vw] h-[40vw] md:h-[25vw] bg-[#007bff]/25 rounded-full blur-[120px] pointer-events-none" aria-hidden="true" />
+                <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center relative z-10">
+                    <motion.div {...fadeUp} transition={{ duration: 0.6 }}>
+                        <p className="text-gray-400 uppercase tracking-[0.25em] text-xs md:text-sm mb-4">
+                            Só de {OFFER.periodLabel}
+                        </p>
+                        <motion.div
+                            initial={{ scale: 0.85, opacity: 0 }}
+                            whileInView={{ scale: 1, opacity: 1 }}
+                            viewport={{ once: true }}
+                            transition={{ type: 'spring', stiffness: 120, damping: 14 }}
+                            className="text-7xl md:text-9xl font-black text-white leading-none mb-4"
+                        >
+                            {OFFER.discount}%
+                            <span className="text-transparent [-webkit-text-stroke:2px_#3b9bff] ml-3">OFF</span>
+                        </motion.div>
+                        <p className="text-gray-300 text-lg mb-10 max-w-2xl mx-auto">
+                            A mesma segurança de sempre para registrar sua marca, patente ou software, com {OFFER.discount}%
+                            menos nos honorários.
+                        </p>
+                        <button
+                            onClick={scrollToForm}
+                            className="cta-shine relative overflow-hidden bg-[#007bff] text-white px-10 py-4 rounded-full font-semibold text-lg hover:bg-[#2b8cff] transition-colors shadow-[0_0_40px_rgba(0,123,255,0.4)] inline-flex items-center gap-2"
+                        >
+                            Quero meus {OFFER.discount}% off <ArrowRight className="w-5 h-5" aria-hidden="true" />
+                        </button>
+                    </motion.div>
+                </div>
+            </section>
+
             {/* ===== O risco ===== */}
             <section className="py-20 md:py-28 relative overflow-hidden">
                 <div className="absolute left-1/2 top-0 -translate-x-1/2 w-[70vw] h-[30vw] bg-red-500/[0.06] rounded-full blur-[120px] pointer-events-none" aria-hidden="true" />
@@ -709,7 +741,7 @@ export default function BlackFridayClient() {
                     >
                         <Layers className="w-4 h-4 text-[#3b9bff]" aria-hidden="true" />
                         <span className="text-gray-400">A mesma condição vale para</span>
-                        {['Patente', 'Registro de software', 'Desenho industrial'].map((t) => (
+                        {['Registro de software', 'Desenho industrial'].map((t) => (
                             <span key={t} className="px-3 py-1 rounded-full border border-white/15 text-gray-200">
                                 {t}
                             </span>
@@ -749,38 +781,6 @@ export default function BlackFridayClient() {
                             </motion.div>
                         ))}
                     </div>
-                </div>
-            </section>
-
-            {/* ===== Faixa de oferta ===== */}
-            <section className="py-24 relative overflow-hidden border-t border-white/5">
-                <div className="absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 w-[80vw] md:w-[50vw] h-[40vw] md:h-[25vw] bg-[#007bff]/25 rounded-full blur-[120px] pointer-events-none" aria-hidden="true" />
-                <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center relative z-10">
-                    <motion.div {...fadeUp} transition={{ duration: 0.6 }}>
-                        <p className="text-gray-400 uppercase tracking-[0.25em] text-xs md:text-sm mb-4">
-                            Só de {OFFER.periodLabel}
-                        </p>
-                        <motion.div
-                            initial={{ scale: 0.85, opacity: 0 }}
-                            whileInView={{ scale: 1, opacity: 1 }}
-                            viewport={{ once: true }}
-                            transition={{ type: 'spring', stiffness: 120, damping: 14 }}
-                            className="text-7xl md:text-9xl font-black text-white leading-none mb-4"
-                        >
-                            {OFFER.discount}%
-                            <span className="text-transparent [-webkit-text-stroke:2px_#3b9bff] ml-3">OFF</span>
-                        </motion.div>
-                        <p className="text-gray-300 text-lg mb-10 max-w-2xl mx-auto">
-                            A mesma segurança de sempre para registrar sua marca, patente ou software, com {OFFER.discount}%
-                            menos nos honorários.
-                        </p>
-                        <button
-                            onClick={scrollToForm}
-                            className="cta-shine relative overflow-hidden bg-[#007bff] text-white px-10 py-4 rounded-full font-semibold text-lg hover:bg-[#2b8cff] transition-colors shadow-[0_0_40px_rgba(0,123,255,0.4)] inline-flex items-center gap-2"
-                        >
-                            Quero meus {OFFER.discount}% off <ArrowRight className="w-5 h-5" aria-hidden="true" />
-                        </button>
-                    </motion.div>
                 </div>
             </section>
 
