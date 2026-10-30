@@ -1,9 +1,8 @@
 'use client';
 
-import React, { useState } from 'react';
+import React, { useEffect, useRef, useState } from 'react';
 import { AnimatePresence, motion } from 'framer-motion';
 import Image from 'next/image';
-import { useInView } from 'react-intersection-observer';
 import {
     AlertTriangle,
     ArrowRight,
@@ -193,9 +192,29 @@ export default function BlackFridayClient() {
     });
     const [sending, setSending] = useState(false);
 
-    // Barra fixa no celular aparece quando o formulário sai da tela.
-    const { ref: formRef, inView: formInView } = useInView({ initialInView: true });
-    const showStickyBar = !formInView;
+    // Barra fixa no celular: aparece quando o formulário sai da tela
+    // e some de novo no fim da página, para não cobrir o rodapé.
+    const formRef = useRef<HTMLDivElement>(null);
+    const endRef = useRef<HTMLDivElement>(null);
+    const [showStickyBar, setShowStickyBar] = useState(false);
+    useEffect(() => {
+        const check = () => {
+            const form = formRef.current?.getBoundingClientRect();
+            const end = endRef.current?.getBoundingClientRect();
+            if (!form || !end) return;
+            const formVisible = form.bottom > 0 && form.top < window.innerHeight;
+            const reachedEnd = end.top < window.innerHeight;
+            setShowStickyBar(!formVisible && !reachedEnd);
+        };
+        const first = setTimeout(check, 0);
+        window.addEventListener('scroll', check, { passive: true });
+        window.addEventListener('resize', check);
+        return () => {
+            clearTimeout(first);
+            window.removeEventListener('scroll', check);
+            window.removeEventListener('resize', check);
+        };
+    }, []);
 
     const handleSubmit = async (e: React.FormEvent) => {
         e.preventDefault();
@@ -233,7 +252,8 @@ export default function BlackFridayClient() {
                             Black Friday
                         </span>
                         <span className="font-black whitespace-nowrap">{OFFER.discount}% OFF</span>
-                        <span className="hidden lg:inline text-blue-50">
+                        <span className="hidden md:inline xl:hidden text-blue-50 whitespace-nowrap">nos honorários</span>
+                        <span className="hidden xl:inline text-blue-50">
                             nos honorários de marca, software e desenho industrial · Taxas do INPI à parte
                         </span>
                     </p>
@@ -385,14 +405,14 @@ export default function BlackFridayClient() {
                             </div>
 
                             {/* Formulário */}
-                            <div className="lg:col-span-5" ref={formRef}>
+                            <div className="lg:col-span-5 w-full max-w-xl mx-auto lg:max-w-none" ref={formRef}>
                                 <motion.div
                                     initial={{ opacity: 0, x: 30 }}
                                     animate={{ opacity: 1, x: 0 }}
                                     transition={{ duration: 0.8, delay: 0.2 }}
                                 >
                                     <SpinBorder className="shadow-[0_0_80px_rgba(0,123,255,0.18)]">
-                                        <div className="p-5 md:p-8">
+                                        <div className="p-4 sm:p-6 md:p-8 lg:p-6 xl:p-8">
                                             <div className="text-center mb-6">
                                                 <div className="inline-flex items-center gap-2 px-3 py-1 rounded-md bg-[#007bff] text-white text-xs font-bold uppercase tracking-wider mb-3">
                                                     <Percent className="w-3.5 h-3.5" aria-hidden="true" />
@@ -414,7 +434,7 @@ export default function BlackFridayClient() {
                                                     aria-label="Qual marca você quer registrar?"
                                                     value={formState.marca}
                                                     onChange={(e) => setFormState({ ...formState, marca: e.target.value })}
-                                                    placeholder="Qual marca você quer registrar?"
+                                                    placeholder="Qual marca quer registrar?"
                                                     className={`${inputClass} border-[#3b9bff]/40`}
                                                 />
                                                 <input
@@ -447,7 +467,7 @@ export default function BlackFridayClient() {
                                                         setFormState({ ...formState, phone: formatPhone(e.target.value) })
                                                     }
                                                     maxLength={15}
-                                                    placeholder="WhatsApp: (DD) 99999-9999"
+                                                    placeholder="WhatsApp com DDD"
                                                     className={inputClass}
                                                 />
                                                 <input
@@ -464,10 +484,17 @@ export default function BlackFridayClient() {
                                                 <button
                                                     type="submit"
                                                     disabled={sending}
-                                                    className="cta-shine relative overflow-hidden w-full bg-[#007bff] hover:bg-[#2b8cff] disabled:opacity-60 text-white font-bold py-4 rounded-xl transition-colors text-base mt-2 inline-flex items-center justify-center gap-2 shadow-[0_8px_30px_rgba(0,123,255,0.35)]"
+                                                    className="cta-shine relative overflow-hidden w-full bg-[#007bff] hover:bg-[#2b8cff] disabled:opacity-60 text-white font-bold py-4 px-4 rounded-xl transition-colors text-base lg:text-[15px] xl:text-base text-center mt-2 inline-flex items-center justify-center gap-2 shadow-[0_8px_30px_rgba(0,123,255,0.35)]"
                                                 >
-                                                    {sending ? 'Enviando...' : 'Quero analisar minha marca grátis'}
-                                                    {!sending && <ArrowRight className="w-5 h-5" aria-hidden="true" />}
+                                                    {sending ? (
+                                                        'Enviando...'
+                                                    ) : (
+                                                        <>
+                                                            <span className="min-[400px]:hidden">Analisar minha marca grátis</span>
+                                                            <span className="hidden min-[400px]:inline">Quero analisar minha marca grátis</span>
+                                                        </>
+                                                    )}
+                                                    {!sending && <ArrowRight className="hidden min-[370px]:block w-5 h-5" aria-hidden="true" />}
                                                 </button>
 
                                                 <p className="text-[10px] text-gray-500 text-center leading-tight pt-1">
@@ -508,10 +535,10 @@ export default function BlackFridayClient() {
                             whileInView={{ scale: 1, opacity: 1 }}
                             viewport={{ once: true }}
                             transition={{ type: 'spring', stiffness: 120, damping: 14 }}
-                            className="text-7xl md:text-9xl font-black text-white leading-none mb-4"
+                            className="text-[clamp(3.5rem,20vw,8rem)] font-black text-white leading-none mb-4 whitespace-nowrap"
                         >
                             {OFFER.discount}%
-                            <span className="text-transparent [-webkit-text-stroke:2px_#3b9bff] ml-3">OFF</span>
+                            <span className="text-transparent [-webkit-text-stroke:2px_#3b9bff] ml-[0.12em]">OFF</span>
                         </motion.div>
                         <p className="text-gray-300 text-lg mb-10 max-w-2xl mx-auto">
                             A mesma segurança de sempre para registrar sua marca ou software, com {OFFER.discount}%
@@ -579,7 +606,7 @@ export default function BlackFridayClient() {
                             </p>
                             <button
                                 onClick={scrollToForm}
-                                className="bg-black text-white px-7 py-3.5 rounded-full font-semibold hover:bg-[#007bff] transition-colors inline-flex items-center gap-2"
+                                className="bg-black text-white px-7 py-3.5 rounded-full font-semibold hover:bg-[#007bff] transition-colors inline-flex items-center justify-center gap-2 text-center"
                             >
                                 Proteger minha marca agora <ArrowRight className="w-4 h-4" aria-hidden="true" />
                             </button>
@@ -743,6 +770,8 @@ export default function BlackFridayClient() {
                 </div>
             </section>
 
+            <div ref={endRef} aria-hidden="true" />
+
             {/* ===== Barra fixa no celular ===== */}
             <AnimatePresence>
                 {showStickyBar && (
@@ -757,7 +786,10 @@ export default function BlackFridayClient() {
                             onClick={scrollToForm}
                             className="w-full bg-[#007bff] text-white font-bold py-3.5 rounded-xl inline-flex items-center justify-center gap-2"
                         >
-                            {OFFER.discount}% off · Analisar minha marca grátis
+                            <span className="min-[370px]:hidden">{OFFER.discount}% off · Analisar grátis</span>
+                            <span className="hidden min-[370px]:inline">
+                                {OFFER.discount}% off · Analisar minha marca grátis
+                            </span>
                             <ArrowRight className="w-4 h-4" aria-hidden="true" />
                         </button>
                     </motion.div>
