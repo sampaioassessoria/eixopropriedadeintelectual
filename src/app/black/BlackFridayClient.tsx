@@ -16,7 +16,6 @@ import {
     RefreshCcw,
     SearchX,
     Shield,
-    ShieldCheck,
     Star,
     Store,
     XCircle,
@@ -236,11 +235,6 @@ const BENEFITS = [
         icon: Zap,
         title: 'Pedido no INPI em até 48h',
         text: 'Protocolamos o seu processo em até 48 horas após o pagamento da taxa do INPI.',
-    },
-    {
-        icon: ShieldCheck,
-        title: 'Alguém cuidando até a decisão',
-        text: 'Acompanhamos todo o processo no INPI para você não perder nenhum prazo.',
     },
 ];
 
@@ -691,7 +685,7 @@ export default function BlackFridayClient() {
                         <SectionLabel>A oferta</SectionLabel>
                         <h2 className="text-3xl md:text-5xl font-bold text-white mt-4">O que você leva na Black Friday</h2>
                     </motion.div>
-                    <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-5">
+                    <div className="grid grid-cols-1 md:grid-cols-3 gap-5">
                         {BENEFITS.map((item, i) => (
                             <motion.div
                                 key={item.title}
