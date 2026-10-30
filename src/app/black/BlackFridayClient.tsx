@@ -256,7 +256,7 @@ const STEPS = [
 const FAQ = [
     {
         q: 'O desconto vale para quê?',
-        a: 'Para os honorários da Eixo no registro de marca, patente, software e desenho industrial. As taxas oficiais do INPI são cobradas à parte, como em qualquer escritório.',
+        a: 'Para os honorários da Eixo no registro de marca, software e desenho industrial. As taxas oficiais do INPI são cobradas à parte, como em qualquer escritório.',
     },
     {
         q: 'Até quando vale a condição?',
@@ -425,7 +425,7 @@ export default function BlackFridayClient() {
                                                 <CountdownDisplay countdown={countdown} />
                                             </div>
                                             <p className="text-xs text-gray-500 mt-3">
-                                                Vale para marca, patente, software e desenho industrial. Taxas do INPI à
+                                                Vale para marca, software e desenho industrial. Taxas do INPI à
                                                 parte.
                                             </p>
                                         </div>
@@ -585,7 +585,7 @@ export default function BlackFridayClient() {
                             <span className="text-transparent [-webkit-text-stroke:2px_#3b9bff] ml-3">OFF</span>
                         </motion.div>
                         <p className="text-gray-300 text-lg mb-10 max-w-2xl mx-auto">
-                            A mesma segurança de sempre para registrar sua marca, patente ou software, com {OFFER.discount}%
+                            A mesma segurança de sempre para registrar sua marca ou software, com {OFFER.discount}%
                             menos nos honorários.
                         </p>
                         <button
