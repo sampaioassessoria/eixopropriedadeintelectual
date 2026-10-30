@@ -1,6 +1,6 @@
 'use client';
 
-import React, { useEffect, useState } from 'react';
+import React, { useState } from 'react';
 import { AnimatePresence, motion } from 'framer-motion';
 import Image from 'next/image';
 import { useInView } from 'react-intersection-observer';
@@ -9,7 +9,6 @@ import {
     ArrowRight,
     BellRing,
     CheckCircle2,
-    Clock,
     FileSearch,
     Layers,
     Percent,
@@ -25,55 +24,12 @@ import { formatPhone } from '../../utils/masks';
 import StatsSection from '../../components/StatsSection';
 import TestimonialsStack from '../../components/TestimonialsStack';
 
-// Condição da campanha. Para mudar o desconto ou as datas, altere só aqui.
+// Condição da campanha. Para mudar o desconto, altere só aqui.
 const OFFER = {
     discount: 30,
-    start: new Date('2026-11-17T00:00:00-03:00').getTime(),
-    end: new Date('2026-11-30T23:59:59-03:00').getTime(),
-    periodLabel: '17 a 30/11',
-    endLabel: '30/11',
 };
 
 const WEBHOOK_URL = 'https://n8n.smpdev.site/webhook/75c86d88-3d63-43c5-ba19-8531323f28b2';
-
-type Phase = 'before' | 'live' | 'ended';
-
-type Countdown = {
-    phase: Phase;
-    days: number;
-    hours: number;
-    minutes: number;
-    seconds: number;
-};
-
-// Calculado só no navegador, para o HTML do servidor não divergir do cliente.
-function useCountdown(): Countdown | null {
-    const [now, setNow] = useState<number | null>(null);
-
-    useEffect(() => {
-        const tick = () => setNow(Date.now());
-        const first = setTimeout(tick, 0);
-        const timer = setInterval(tick, 1000);
-        return () => {
-            clearTimeout(first);
-            clearInterval(timer);
-        };
-    }, []);
-
-    if (now === null) return null;
-
-    const phase: Phase = now < OFFER.start ? 'before' : now <= OFFER.end ? 'live' : 'ended';
-    const target = phase === 'before' ? OFFER.start : OFFER.end;
-    const total = Math.max(0, Math.floor((target - now) / 1000));
-
-    return {
-        phase,
-        days: Math.floor(total / 86400),
-        hours: Math.floor((total % 86400) / 3600),
-        minutes: Math.floor((total % 3600) / 60),
-        seconds: total % 60,
-    };
-}
 
 const scrollToForm = () => document.getElementById('home')?.scrollIntoView({ behavior: 'smooth' });
 
@@ -84,54 +40,6 @@ const fadeUp = {
 };
 
 /* ---------- Peças ---------- */
-
-const Digit = ({ value, unit }: { value: number | undefined; unit: string }) => {
-    const text = value === undefined ? '--' : String(value).padStart(2, '0');
-    return (
-        <div className="w-[68px] md:w-20 py-2.5 rounded-xl bg-black/60 border border-white/10 text-center shadow-[inset_0_1px_0_rgba(255,255,255,0.06)]">
-            <div className="relative h-8 md:h-9 overflow-hidden">
-                <AnimatePresence mode="popLayout" initial={false}>
-                    <motion.div
-                        key={text}
-                        initial={{ y: '-100%', opacity: 0 }}
-                        animate={{ y: 0, opacity: 1 }}
-                        exit={{ y: '100%', opacity: 0 }}
-                        transition={{ duration: 0.35, ease: 'easeOut' }}
-                        className="text-2xl md:text-3xl font-bold text-white tabular-nums leading-8 md:leading-9"
-                    >
-                        {text}
-                    </motion.div>
-                </AnimatePresence>
-            </div>
-            <div className="text-[10px] md:text-xs text-gray-500 uppercase tracking-wider mt-0.5">{unit}</div>
-        </div>
-    );
-};
-
-const CountdownDisplay = ({ countdown }: { countdown: Countdown | null }) => {
-    if (countdown?.phase === 'ended') {
-        return (
-            <p className="text-gray-300 text-sm md:text-base">
-                A Black Friday da Eixo terminou. Você ainda pode pedir sua análise gratuita.
-            </p>
-        );
-    }
-
-    return (
-        <div>
-            <p className="flex items-center justify-center lg:justify-start gap-2 text-gray-400 text-xs uppercase tracking-[0.2em] mb-3">
-                <Clock className="w-4 h-4 text-[#3b9bff]" aria-hidden="true" />
-                {countdown?.phase === 'before' ? 'Começa em' : 'Termina em'}
-            </p>
-            <div className="flex justify-center lg:justify-start gap-2 md:gap-3" role="timer" aria-live="off">
-                <Digit value={countdown?.days} unit="dias" />
-                <Digit value={countdown?.hours} unit="horas" />
-                <Digit value={countdown?.minutes} unit="min" />
-                <Digit value={countdown?.seconds} unit="seg" />
-            </div>
-        </div>
-    );
-};
 
 // Borda com brilho girando, usada nos cartões de destaque.
 const SpinBorder = ({ children, className = '' }: { children: React.ReactNode; className?: string }) => (
@@ -146,7 +54,7 @@ const TapeRow = ({ dark = false, reverse = false }: { dark?: boolean; reverse?: 
         <span key={i} className="flex items-center gap-6 pr-6">
             <span>Black Friday Eixo</span>
             <span className={dark ? 'text-[#3b9bff]' : 'text-white'}>{OFFER.discount}% off</span>
-            <span>Só até {OFFER.endLabel}</span>
+            <span>Tempo limitado</span>
             <Zap className="w-4 h-4 fill-current" aria-hidden="true" />
         </span>
     ));
@@ -229,7 +137,7 @@ const BENEFITS = [
     {
         icon: Percent,
         title: `${OFFER.discount}% menos nos honorários`,
-        text: 'O mesmo serviço completo da Eixo, com desconto direto até 30/11.',
+        text: 'O mesmo serviço completo da Eixo, com desconto direto na Black Friday.',
     },
     {
         icon: Zap,
@@ -275,8 +183,6 @@ const FAQ = [
 /* ---------- Página ---------- */
 
 export default function BlackFridayClient() {
-    const countdown = useCountdown();
-    const ended = countdown?.phase === 'ended';
 
     const [formState, setFormState] = useState({
         name: '',
@@ -417,9 +323,6 @@ export default function BlackFridayClient() {
                                                     {OFFER.discount}% menos.
                                                 </span>
                                             </div>
-                                            <div className="min-h-[92px]">
-                                                <CountdownDisplay countdown={countdown} />
-                                            </div>
                                             <p className="text-xs text-gray-500 mt-3">
                                                 Vale para marca, software e desenho industrial. Taxas do INPI à
                                                 parte.
@@ -463,7 +366,7 @@ export default function BlackFridayClient() {
                                             <div className="text-center mb-6">
                                                 <div className="inline-flex items-center gap-2 px-3 py-1 rounded-md bg-[#007bff] text-white text-xs font-bold uppercase tracking-wider mb-3">
                                                     <Percent className="w-3.5 h-3.5" aria-hidden="true" />
-                                                    {ended ? 'Análise gratuita' : `${OFFER.discount}% off até ${OFFER.endLabel}`}
+                                                    {OFFER.discount}% off na Black Friday
                                                 </div>
                                                 <h2 className="text-xl md:text-2xl font-bold text-white">
                                                     Descubra se a sua marca pode ser registrada
@@ -568,7 +471,7 @@ export default function BlackFridayClient() {
                 <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center relative z-10">
                     <motion.div {...fadeUp} transition={{ duration: 0.6 }}>
                         <p className="text-gray-400 uppercase tracking-[0.25em] text-xs md:text-sm mb-4">
-                            Só de {OFFER.periodLabel}
+                            Só na Black Friday
                         </p>
                         <motion.div
                             initial={{ scale: 0.85, opacity: 0 }}
@@ -818,7 +721,7 @@ export default function BlackFridayClient() {
                 <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center relative z-10">
                     <motion.div {...fadeUp} transition={{ duration: 0.6 }}>
                         <h2 className="text-3xl md:text-5xl font-bold text-white mb-6 leading-tight">
-                            Dia {OFFER.endLabel} o desconto acaba.
+                            A Black Friday acaba.
                             <br />
                             <span className="text-black/80">
                                 O risco de alguém registrar sua marca primeiro, não.
@@ -835,7 +738,7 @@ export default function BlackFridayClient() {
                             Quero analisar minha marca grátis <ArrowRight className="w-5 h-5" aria-hidden="true" />
                         </button>
                         <p className="text-blue-100/80 text-xs mt-10">
-                            Desconto de {OFFER.discount}% sobre os honorários da Eixo, válido de 17 a 30/11/2026. Taxas do
+                            Desconto de {OFFER.discount}% sobre os honorários da Eixo, válido durante a Black Friday. Taxas do
                             INPI à parte.
                         </p>
                     </motion.div>
@@ -856,7 +759,7 @@ export default function BlackFridayClient() {
                             onClick={scrollToForm}
                             className="w-full bg-[#007bff] text-white font-bold py-3.5 rounded-xl inline-flex items-center justify-center gap-2"
                         >
-                            {ended ? 'Analisar minha marca grátis' : `${OFFER.discount}% off · Analisar minha marca grátis`}
+                            {OFFER.discount}% off · Analisar minha marca grátis
                             <ArrowRight className="w-4 h-4" aria-hidden="true" />
                         </button>
                     </motion.div>
