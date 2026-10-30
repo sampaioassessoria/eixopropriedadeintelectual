@@ -217,8 +217,37 @@ export default function BlackFridayClient() {
 
     return (
         <div className="bg-[#050505]">
+            {/* ===== Faixa da promoção (substitui o menu do site nesta página) ===== */}
+            <div className="cta-shine fixed top-0 inset-x-0 z-50 overflow-hidden bg-gradient-to-r from-[#0057d9] via-[#007bff] to-[#0057d9] border-b border-white/15 shadow-[0_6px_30px_rgba(0,123,255,0.35)]">
+                <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-16 flex items-center justify-between gap-4 relative z-10">
+                    <Image
+                        src="/logo principal.png"
+                        alt="Eixo Intelectual"
+                        width={150}
+                        height={40}
+                        className="h-7 md:h-8 w-auto shrink-0"
+                        priority
+                    />
+                    <p className="flex items-center gap-2 md:gap-3 text-white text-sm md:text-base min-w-0">
+                        <span className="px-2 py-0.5 rounded-md bg-black text-white text-[11px] md:text-xs font-bold uppercase tracking-wider shrink-0">
+                            Black Friday
+                        </span>
+                        <span className="font-black whitespace-nowrap">{OFFER.discount}% OFF</span>
+                        <span className="hidden lg:inline text-blue-50">
+                            nos honorários de marca, software e desenho industrial · Taxas do INPI à parte
+                        </span>
+                    </p>
+                    <button
+                        onClick={scrollToForm}
+                        className="hidden md:inline-flex items-center gap-2 shrink-0 bg-black hover:bg-[#111] text-white text-sm font-semibold px-5 py-2.5 rounded-full transition-colors"
+                    >
+                        Quero meus {OFFER.discount}% off <ArrowRight className="w-4 h-4" aria-hidden="true" />
+                    </button>
+                </div>
+            </div>
+
             {/* ===== Hero ===== */}
-            <section id="home" className="relative min-h-screen flex flex-col pt-28 pb-20 lg:pb-16 z-20 overflow-hidden">
+            <section id="home" className="relative min-h-screen flex flex-col pt-24 md:pt-28 pb-20 lg:pb-16 z-20 overflow-hidden">
                 <div
                     className="absolute inset-0 pointer-events-none opacity-[0.07]"
                     style={{
@@ -346,33 +375,6 @@ export default function BlackFridayClient() {
                                         </motion.li>
                                     ))}
                                 </ul>
-
-                                {/* Oferta: o motivo para fazer agora */}
-                                <motion.div
-                                    initial={{ opacity: 0, y: 20 }}
-                                    animate={{ opacity: 1, y: 0 }}
-                                    transition={{ duration: 0.6, delay: 0.5 }}
-                                    className="max-w-xl mx-auto lg:mx-0 mb-8"
-                                >
-                                    <SpinBorder>
-                                        <div className="p-5 md:p-6 text-center lg:text-left bg-gradient-to-br from-[#007bff]/[0.12] to-transparent rounded-2xl">
-                                            <div className="flex flex-col sm:flex-row sm:items-center justify-center lg:justify-start gap-x-4 gap-y-1 mb-4">
-                                                <span className="text-4xl md:text-5xl font-black text-white leading-none">
-                                                    {OFFER.discount}% OFF
-                                                </span>
-                                                <span className="text-gray-300 text-sm md:text-base leading-snug">
-                                                    nos honorários na Black Friday.
-                                                    <br className="hidden sm:block" /> A mesma segurança,{' '}
-                                                    {OFFER.discount}% menos.
-                                                </span>
-                                            </div>
-                                            <p className="text-xs text-gray-500 mt-3">
-                                                Vale para marca, software e desenho industrial. Taxas do INPI à
-                                                parte.
-                                            </p>
-                                        </div>
-                                    </SpinBorder>
-                                </motion.div>
 
                                 <div className="flex justify-center lg:justify-start">
                                     <p className="text-gray-400 text-sm max-w-md text-center lg:text-left leading-snug">

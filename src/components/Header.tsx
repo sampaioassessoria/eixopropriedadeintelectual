@@ -73,12 +73,6 @@ const Header: React.FC = () => {
       return;
     }
 
-    // Na landing da Black Friday, "Solicitar Análise" leva ao formulário da própria página
-    if (pathname === '/black' && sectionId === 'home') {
-      document.getElementById('home')?.scrollIntoView({ behavior: 'smooth' });
-      return;
-    }
-
     if (pathname !== '/') {
       router.push(`/#${sectionId}`);
     } else {
@@ -94,6 +88,9 @@ const Header: React.FC = () => {
       setActiveSection('blog');
     }
   }, [pathname]);
+
+  // A landing da Black Friday usa a própria faixa da promoção no lugar do menu
+  if (pathname === '/black') return null;
 
   return (
     <header className="fixed top-0 left-0 right-0 z-50 bg-black border-b border-gray-800">
