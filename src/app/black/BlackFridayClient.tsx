@@ -8,6 +8,7 @@ import {
     ArrowRight,
     BellRing,
     CheckCircle2,
+    ChevronDown,
     FileSearch,
     Layers,
     Percent,
@@ -188,7 +189,7 @@ export default function BlackFridayClient() {
         email: '',
         phone: '',
         company: '',
-        marca: '',
+        employees: '',
     });
     const [sending, setSending] = useState(false);
 
@@ -430,21 +431,11 @@ export default function BlackFridayClient() {
                                                 <input
                                                     required
                                                     type="text"
-                                                    name="marca"
-                                                    aria-label="Qual marca você quer registrar?"
-                                                    value={formState.marca}
-                                                    onChange={(e) => setFormState({ ...formState, marca: e.target.value })}
-                                                    placeholder="Qual marca quer registrar?"
-                                                    className={`${inputClass} border-[#3b9bff]/40`}
-                                                />
-                                                <input
-                                                    required
-                                                    type="text"
                                                     name="name"
-                                                    aria-label="Seu nome"
+                                                    aria-label="Qual seu nome?"
                                                     value={formState.name}
                                                     onChange={(e) => setFormState({ ...formState, name: e.target.value })}
-                                                    placeholder="Seu nome"
+                                                    placeholder="Qual seu nome?"
                                                     className={inputClass}
                                                 />
                                                 <input
@@ -467,7 +458,7 @@ export default function BlackFridayClient() {
                                                         setFormState({ ...formState, phone: formatPhone(e.target.value) })
                                                     }
                                                     maxLength={15}
-                                                    placeholder="WhatsApp com DDD"
+                                                    placeholder="(DD) 99999-9999"
                                                     className={inputClass}
                                                 />
                                                 <input
@@ -477,9 +468,34 @@ export default function BlackFridayClient() {
                                                     aria-label="Nome da sua empresa"
                                                     value={formState.company}
                                                     onChange={(e) => setFormState({ ...formState, company: e.target.value })}
-                                                    placeholder="Nome da sua empresa"
+                                                    placeholder="Nome da sua empresa..."
                                                     className={inputClass}
                                                 />
+                                                <div>
+                                                    <label htmlFor="bf-employees" className="block text-gray-400 text-sm mb-2 text-left">
+                                                        Número de Funcionários
+                                                    </label>
+                                                    <div className="relative">
+                                                        <select
+                                                            required
+                                                            id="bf-employees"
+                                                            name="employees"
+                                                            value={formState.employees}
+                                                            onChange={(e) => setFormState({ ...formState, employees: e.target.value })}
+                                                            className={`${inputClass} appearance-none pr-10 [&_option]:bg-[#0a0d14] [&_option]:text-gray-100 ${formState.employees ? '' : 'text-gray-500'}`}
+                                                        >
+                                                            <option value="">Selecione...</option>
+                                                            <option value="1-5">1 a 5</option>
+                                                            <option value="6-20">6 a 20</option>
+                                                            <option value="21-50">21 a 50</option>
+                                                            <option value="50+">Mais de 50</option>
+                                                        </select>
+                                                        <ChevronDown
+                                                            className="w-4 h-4 text-gray-500 absolute right-4 top-1/2 -translate-y-1/2 pointer-events-none"
+                                                            aria-hidden="true"
+                                                        />
+                                                    </div>
+                                                </div>
 
                                                 <button
                                                     type="submit"
